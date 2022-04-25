@@ -218,7 +218,7 @@ class Sort(object):
     """
     self.frame_count += 1
     # get predicted locations from existing trackers.
-    trks = np.zeros((len(self.trackers), 5))
+    trks = np.zeros((len(self.trackers), 5)) # x1, y1, x2, y2, confidence
     to_del = []
     ret = []
     for t, trk in enumerate(trks):
@@ -291,8 +291,8 @@ if __name__ == '__main__':
     mot_tracker = Sort(max_age=args.max_age, 
                        min_hits=args.min_hits,
                        iou_threshold=args.iou_threshold) #create instance of the SORT tracker
-    seq_dets = np.loadtxt(seq_dets_fn, delimiter=',')
-    seq = seq_dets_fn[pattern.find('*'):].split(os.path.sep)[0]
+    seq_dets = np.loadtxt(seq_dets_fn, delimiter=',') # file contents
+    seq = seq_dets_fn[pattern.find('*'):].split(os.path.sep)[0] # dataset name
     
     with open(os.path.join('output', '%s.txt'%(seq)),'w') as out_file:
       print("Processing %s."%(seq))
