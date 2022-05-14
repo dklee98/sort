@@ -62,7 +62,7 @@ To display the results you need to:
   $ ln -s /path/to/MOT2015_challenge/data/2DMOT2015 mot_benchmark
 
   <!-- dongkyu -->
-  $ ln -s ../dataset stuttgart_00 mask_data
+  $ ln -s ../dataset/stuttgart_00 mask_data
   ```
 0. Run the demo with the ```--display``` flag
   ```
